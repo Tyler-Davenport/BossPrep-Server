@@ -1,0 +1,35 @@
+[
+  {
+    "model": "bossprepapi.response",
+    "pk": 1,
+    "fields": {
+      "trial": 1,
+      "question": 1,
+      "user": "firebaseKey2",
+      "response_text": "I described a time I debugged a production issue.",
+      "created_at": "2025-08-25T10:00:00Z"
+    }
+  },
+  {
+    "model": "bossprepapi.response",
+    "pk": 2,
+    "fields": {
+      "trial": 1,
+      "question": 2,
+      "user": "firebaseKey2",
+      "response_text": "I prioritize tasks and communicate with my team.",
+      "created_at": "2025-08-25T10:05:00Z"
+    }
+  },
+  {
+    "model": "bossprepapi.response",
+    "pk": 3,
+    "fields": {
+      "trial": 2,
+      "question": 3,
+      "user": "firebaseKey3",
+      "response_text": "I led a cross-functional team to launch a new feature.",
+      "created_at": "2025-08-25T11:00:00Z"
+    }
+  }
+]

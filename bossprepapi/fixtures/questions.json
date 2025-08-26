@@ -1,0 +1,32 @@
+[
+  {
+    "model": "bossprepapi.question",
+    "pk": 1,
+    "fields": {
+      "question_text": "Describe a time you solved a difficult problem.",
+      "job_field": "Engineering",
+      "job_role": "Software Engineer",
+      "created_by": "firebaseKey1"
+    }
+  },
+  {
+    "model": "bossprepapi.question",
+    "pk": 2,
+    "fields": {
+      "question_text": "How do you handle tight deadlines?",
+      "job_field": "Engineering",
+      "job_role": "Software Engineer",
+      "created_by": "firebaseKey1"
+    }
+  },
+  {
+    "model": "bossprepapi.question",
+    "pk": 3,
+    "fields": {
+      "question_text": "Explain a project you led.",
+      "job_field": "Product",
+      "job_role": "Product Manager",
+      "created_by": "firebaseKey3"
+    }
+  }
+]

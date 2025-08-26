@@ -1,0 +1,32 @@
+[
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey1",
+    "fields": {
+      "uid": 1,
+      "name": "Alice Mentor",
+      "displayName": "Alice",
+      "email": "alice@example.com"
+    }
+  },
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey2",
+    "fields": {
+      "uid": 2,
+      "name": "Bob Learner",
+      "displayName": "Bob",
+      "email": "bob@example.com"
+    }
+  },
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey3",
+    "fields": {
+      "uid": 3,
+      "name": "Carol Mentor",
+      "displayName": "Carol",
+      "email": "carol@example.com"
+    }
+  }
+]

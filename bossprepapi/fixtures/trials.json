@@ -1,0 +1,20 @@
+[
+  {
+    "model": "bossprepapi.trial",
+    "pk": 1,
+    "fields": {
+      "title": "Bob's Engineering Practice Quiz",
+      "created_by": "firebaseKey2"
+    }
+  },
+  {
+    "model": "bossprepapi.trial",
+    "pk": 2,
+    "fields": { "title": "Carol's Product Quiz", "created_by": "firebaseKey3" }
+  },
+  {
+    "model": "bossprepapi.trial",
+    "pk": 3,
+    "fields": { "title": "Alice's Software Quiz", "created_by": "firebaseKey1" }
+  }
+]

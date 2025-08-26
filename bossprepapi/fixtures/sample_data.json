@@ -1,0 +1,146 @@
+[
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey1",
+    "fields": {
+      "uid": 1,
+      "name": "Alice Mentor",
+      "displayName": "Alice",
+      "email": "alice@example.com"
+    }
+  },
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey2",
+    "fields": {
+      "uid": 2,
+      "name": "Bob Learner",
+      "displayName": "Bob",
+      "email": "bob@example.com"
+    }
+  },
+  {
+    "model": "bossprepapi.user",
+    "pk": "firebaseKey3",
+    "fields": {
+      "uid": 3,
+      "name": "Carol Mentor",
+      "displayName": "Carol",
+      "email": "carol@example.com"
+    }
+  },
+  {
+    "model": "bossprepapi.question",
+    "pk": 1,
+    "fields": {
+      "question_text": "Describe a time you solved a difficult problem.",
+      "job_field": "Engineering",
+      "job_role": "Software Engineer",
+      "created_by": "firebaseKey1"
+    }
+  },
+  {
+    "model": "bossprepapi.question",
+    "pk": 2,
+    "fields": {
+      "question_text": "How do you handle tight deadlines?",
+      "job_field": "Engineering",
+      "job_role": "Software Engineer",
+      "created_by": "firebaseKey1"
+    }
+  },
+  {
+    "model": "bossprepapi.question",
+    "pk": 3,
+    "fields": {
+      "question_text": "Explain a project you led.",
+      "job_field": "Product",
+      "job_role": "Product Manager",
+      "created_by": "firebaseKey3"
+    }
+  },
+  {
+    "model": "bossprepapi.trial",
+    "pk": 1,
+    "fields": {
+      "title": "Bob's Engineering Practice Quiz",
+      "created_by": "firebaseKey2"
+    }
+  },
+  {
+    "model": "bossprepapi.trial",
+    "pk": 2,
+    "fields": {
+      "title": "Carol's Product Quiz",
+      "created_by": "firebaseKey3"
+    }
+  },
+  {
+    "model": "bossprepapi.trial",
+    "pk": 3,
+    "fields": {
+      "title": "Alice's Software Quiz",
+      "created_by": "firebaseKey1"
+    }
+  },
+  {
+    "model": "bossprepapi.trialquestion",
+    "pk": 1,
+    "fields": {
+      "trial": 1,
+      "question": 1,
+      "user": "firebaseKey2"
+    }
+  },
+  {
+    "model": "bossprepapi.trialquestion",
+    "pk": 2,
+    "fields": {
+      "trial": 1,
+      "question": 2,
+      "user": "firebaseKey2"
+    }
+  },
+  {
+    "model": "bossprepapi.trialquestion",
+    "pk": 3,
+    "fields": {
+      "trial": 2,
+      "question": 3,
+      "user": "firebaseKey3"
+    }
+  },
+  {
+    "model": "bossprepapi.response",
+    "pk": 1,
+    "fields": {
+      "trial": 1,
+      "question": 1,
+      "user": "firebaseKey2",
+      "response_text": "I described a time I debugged a production issue.",
+      "created_at": "2025-08-25T10:00:00Z"
+    }
+  },
+  {
+    "model": "bossprepapi.response",
+    "pk": 2,
+    "fields": {
+      "trial": 1,
+      "question": 2,
+      "user": "firebaseKey2",
+      "response_text": "I prioritize tasks and communicate with my team.",
+      "created_at": "2025-08-25T10:05:00Z"
+    }
+  },
+  {
+    "model": "bossprepapi.response",
+    "pk": 3,
+    "fields": {
+      "trial": 2,
+      "question": 3,
+      "user": "firebaseKey3",
+      "response_text": "I led a cross-functional team to launch a new feature.",
+      "created_at": "2025-08-25T11:00:00Z"
+    }
+  }
+]
