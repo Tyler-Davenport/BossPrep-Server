@@ -1,6 +1,6 @@
 from django.db import models
 
-class Users(models.Model):
+class User(models.Model):
     firebaseKey = models.CharField(max_length=255, primary_key=True)
     uid = models.IntegerField()
     name = models.CharField(max_length=255)
