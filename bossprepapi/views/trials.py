@@ -15,7 +15,11 @@ class TrialViewSet(ViewSet):
             return Response({'error': 'Trial not found'}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        trials = Trial.objects.all()
+        created_by = request.query_params.get('created_by')
+        if created_by:
+            trials = Trial.objects.filter(created_by=created_by)
+        else:
+            trials = Trial.objects.all()
         serializer = TrialSerializer(trials, many=True)
         return Response(serializer.data)
 

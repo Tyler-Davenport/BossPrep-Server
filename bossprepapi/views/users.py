@@ -9,7 +9,9 @@ from bossprepapi.serializers import UserSerializer
 class UserView(APIView):
 	def get(self, request, uid=None):
 		if uid is None:
-			return Response({'error': 'uid required.'}, status=status.HTTP_400_BAD_REQUEST)
+			users = User.objects.all()
+			serializer = UserSerializer(users, many=True)
+			return Response(serializer.data)
 		try:
 			user = User.objects.get(uid=uid)
 			serializer = UserSerializer(user)
