@@ -5,11 +5,20 @@ from bossprepapi.models.trial_questions import TrialQuestion
 from bossprepapi.serializers import TrialQuestionSerializer
 
 class TrialQuestionViewSet(ViewSet):
+
+    def retrieve(self, request, pk=None):
+        try:
+            trial_question = TrialQuestion.objects.get(pk=pk)
+            serializer = TrialQuestionSerializer(trial_question)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except TrialQuestion.DoesNotExist:
+            return Response({'error': 'TrialQuestion not found'}, status=status.HTTP_404_NOT_FOUND)
+
     def list(self, request):
         user = request.query_params.get('user')
         if not user:
             return Response({'error': 'user required as query param'}, status=status.HTTP_400_BAD_REQUEST)
-        trial_questions = TrialQuestion.objects.filter(trial__isnull=True, user=user)
+        trial_questions = TrialQuestion.objects.filter(user=user)
         serializer = TrialQuestionSerializer(trial_questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
