@@ -19,9 +19,10 @@ class QuestionSerializer(serializers.ModelSerializer):
 class ResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Response
-        fields = ['id', 'trial', 'question', 'user', 'response_text', 'created_at']
+        fields = ['id', 'trial', 'question', 'user', 'trial_question', 'response_text', 'created_at']
 
 class TrialQuestionSerializer(serializers.ModelSerializer):
+    trial = serializers.PrimaryKeyRelatedField(queryset=Trial.objects.all(), required=False, allow_null=True)
     class Meta:
         model = TrialQuestion
         fields = ['id', 'trial', 'question', 'user']

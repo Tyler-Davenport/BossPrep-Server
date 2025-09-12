@@ -15,10 +15,14 @@ class TrialQuestionViewSet(ViewSet):
             return Response({'error': 'TrialQuestion not found'}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
+        trial_id = request.query_params.get('trial')
         user = request.query_params.get('user')
-        if not user:
-            return Response({'error': 'user required as query param'}, status=status.HTTP_400_BAD_REQUEST)
-        trial_questions = TrialQuestion.objects.filter(user=user)
+        if trial_id:
+            trial_questions = TrialQuestion.objects.filter(trial=trial_id)
+        elif user:
+            trial_questions = TrialQuestion.objects.filter(user=user)
+        else:
+            return Response({'error': 'trial or user required as query param'}, status=status.HTTP_400_BAD_REQUEST)
         serializer = TrialQuestionSerializer(trial_questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -33,12 +37,17 @@ class TrialQuestionViewSet(ViewSet):
         try:
             trial_question = TrialQuestion.objects.get(pk=pk)
             trial_id = request.data.get('trial')
-            if trial_id is not None:
-                trial_question.trial_id = trial_id
-                trial_question.save()
-                serializer = TrialQuestionSerializer(trial_question)
-                return Response(serializer.data)
-            return Response({'error': 'trial id required'}, status=status.HTTP_400_BAD_REQUEST)
+            # Allow trial to be set to None (null)
+            trial_question.trial_id = trial_id if trial_id is not None else None
+            question_id = request.data.get('question')
+            user_id = request.data.get('user')
+            if question_id is not None:
+                trial_question.question_id = question_id
+            if user_id is not None:
+                trial_question.user_id = user_id
+            trial_question.save()
+            serializer = TrialQuestionSerializer(trial_question)
+            return Response(serializer.data)
         except TrialQuestion.DoesNotExist:
             return Response({'error': 'TrialQuestion not found'}, status=status.HTTP_404_NOT_FOUND)
 
